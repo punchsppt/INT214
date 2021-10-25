@@ -12,17 +12,43 @@ Choose Dataset:
 3. Transform data with dplyr and finding insight the data
 4. Visualization with GGplot2
 
+
+
+
 ## Part 1: Explore the dataset
 
 ```
-# Library
-library(name)
+# Install packages (If you used to install packages before, you can over this step.)
+    install.packages("tidyverse")
+   install.packages("assertive")
 
-# Dataset
-dataset <- read_csv("")
+# Listing packages
+   library(tidyverse)
+   library(assertive)
+
+# Import the dataset
+   books <- read_csv("https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv")
+
+# View dataset
+   View(books)
+   # or
+   glimpse(books)
 ```
 
-In this dataset has .....
+In this dataset has : `271 rows and 7 columns`
+```
+Rows: 271
+Columns: 7
+$ Rating          <dbl> 4.17, 4.01, 3.33, 3.97, 4.06,…
+$ Reviews         <dbl> 3829, 1406, 0, 1658, 1325, 11…
+$ Book_title      <chr> "The Elements of Style", "The…
+$ Description     <chr> "This style manual offers pra…
+$ Number_Of_Pages <dbl> 105, 527, 50, 393, 305, 288, …
+$ Type            <chr> "Hardcover", "Hardcover", "Ki…
+$ Price           <dbl> 9.323529, 11.000000, 11.26764…
+```
+
+
 
 
 
