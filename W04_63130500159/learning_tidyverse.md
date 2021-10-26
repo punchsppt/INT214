@@ -63,3 +63,5 @@ Result :
 10   4.54     171 Practical … "The Comple…             247 Pape…
 # … with 261 more rows, and 1 more variable: Price <dbl>
 ```
+---
+### Next to : Transform data with dplyr and finding insight the data [Click Here!](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/insight_data.md)
