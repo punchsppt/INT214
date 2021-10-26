@@ -1,17 +1,28 @@
 ## Part 4: Visualization with GGplot2
-### 1.) Graph show relation between height and mass
+### 1. Graph show the number of books for each types.
 ```
-scat_plot <- starwars %>% filter(mass<500) %>% ggplot(aes(x=height,y=mass))+
-  geom_point(aes(color=gender))
-
-scat_plot+geom_smooth()
+# bar chart
+barplot <- books %>% ggplot(aes(x = Type)) + geom_bar(width = 0.7) + 
+           ggtitle("Number of books of each types") + 
+           xlab("Type of books") + ylab("Number of books")
+           
+# pie chart
+pie <- num_of_books %>% ggplot(aes(x="", y=n, fill=Type)) + geom_col() + 
+                 coord_polar(theta = "y") + geom_text(aes(label = n),
+                 position = position_stack(vjust = 0.5)) + theme_void()
 ```
 Result:
 
-![Graph 1](graph1.png)
+![Graph 1](graph1.png)  
+![Graph 2](graph1.png)
 
-**Guideline:
-Embed Image by using this syntax in markdown file
-````
-![Name](imageFile)
-````
+### 2. Graph show relation between rating and reviews which rating has more than equal 4.2.
+```
+scatter <- books%>% filter(Rating > 4.2) %>%
+           ggplot(aes(x=Rating, y=Reviews)) + geom_point(aes(color=Type)) +
+           ggtitle("Relation between rating and reviews")
+
+```
+Result:
+
+![Graph 3](graph1.png) 
