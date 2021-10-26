@@ -31,3 +31,6 @@ Result:
 <p align="center">
 <img src="scatter2.png" width=700>
 </p>
+
+---  
+[Let's see BI](https://public.tableau.com/views/chart_16352816996460/chart?:language=en-US&:display_count=n&:origin=viz_share_link)
