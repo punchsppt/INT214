@@ -13,8 +13,8 @@ pie <- num_of_books %>% ggplot(aes(x="", y=n, fill=Type)) + geom_col() +
 ```
 Result:
 
-![Graph 1](graph1.png)  
-![Graph 2](graph1.png)
+<img src="bar.png">
+<img src="pie.png">
 
 ### 2. Graph show relation between rating and reviews which rating has more than equal 4.2.
 ```
@@ -25,4 +25,4 @@ scatter <- books%>% filter(Rating > 4.2) %>%
 ```
 Result:
 
-![Graph 3](graph1.png) 
+<img src="scatter.png">
