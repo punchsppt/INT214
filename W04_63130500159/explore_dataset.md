@@ -49,3 +49,4 @@ Explain :
 - Type : The type of the book meaning is it a hardcover book or an ebook or a kindle book etc. The data type is character.
 - Price : The average price of the book in USD where the average is calculated according the 5 web sources. The data type is double.
 ---
+### Next to : Learning function from Tidyverse [Click Here!](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/learning_tidyverse.md)
