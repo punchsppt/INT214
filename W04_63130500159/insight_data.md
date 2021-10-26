@@ -1,19 +1,18 @@
-## Part 3: Transform data with dplyr and finding insight the data
+# Part 3: Transform data with dplyr and finding insight the data
 
-### 1. จำนวนหนังสือทั้งหมดโดยแยกตามประเภทของหนังสือ
-
+### 1. The number of books in each types.
+Code :
 ```
 num_of_books <- books %>% group_by(Type) %>% count()
 num_of_books
 ```
 
-Result:
-
+Result :
 ```
 # A tibble: 6 × 2
 # Groups:   Type [6]
   Type                      n
-  <chr>                 <int>
+  <chr>                   <int>
 1 Boxed Set - Hardcover     1
 2 ebook                     7
 3 Hardcover                95
@@ -21,21 +20,26 @@ Result:
 5 Paperback               156
 6 Unknown Binding           2
 ```
-//Explain
 
-- list 1
-- list 2
-
+Summary :  
+```
+In total, there are 271 books which have 6 types as follows 
+- Boxed Set - Hardcover, has 1 book. 
+- ebook, has 7 books. 
+- Hardcover, has 95 books.
+- Kindle Edition, has 10 books.
+- Paperback, has 156 books.
+- Unknown Binding, has 2 books.
+```
 ---
 
-
-### 2. หนังสือประเภท Paperback ที่มีราคาต่ำกว่า 20 โชว์ข้อมูลเฉพาะชื่อหนังสือ  ประเภทและราคา
+### 2. Show the title of book, type and price of all books that in paperback type and price is less than 20.  
+Code :
 ```
 books %>% select(Book_title, Type, Price) %>% filter(Type %in% "Paperback" & Price < 20)
 ```
 
 Result:
-
 ```
 # A tibble: 10 × 3
    Book_title                          Type    Price
@@ -51,15 +55,15 @@ Result:
  9 Game Programming Golden Rules       Paperb…  19.2
 10 The Architecture of Open Source Ap… Paperb…  19.2
 ```
-//Explain
 
-- list 1
-- list 2
+Summary :
+```
+There are 10 books that in paperback type and price is less than 20.
+```
 ---
 
-
-
-### 3. หนังสือที่มีจำนวนหน้าน้อยที่สุด คือเรื่องอะไร ประเภทไหนและมีราคาเท่าไร 
+### 3. Show the title of book, type, pages and price that has the most least pages.  
+Code :
 ```
 books %>% select(Book_title, Type, Number_Of_Pages ,Price) %>% filter(Number_Of_Pages == min(Number_Of_Pages))
 ```
@@ -72,20 +76,22 @@ Result:
   <chr>                <chr>             <dbl> <dbl>
 1 Responsive Web Desi… Kindle…              50  11.3
 ```
-//Explain
 
-- list 1
-- list 2
+Summary :
+```
+A book with the most least pages is Responsive Web Design Overview For Beginners in Kindle Edition type.   
+It has only 50 pages and the price is 11.3. 
+```
 ---
 
 
-### 4. หาค่าเฉลี่ยของ rating ของหนังสือแต่ละประเภท
+### 4. The average rating of each types of books.  
+Code :
 ```
 books %>% group_by(Type) %>% summarise(Rating_mean = mean(Rating))
 ```
 
 Result:
-
 ```
 # A tibble: 6 × 2
   Type                  Rating_mean
@@ -97,62 +103,59 @@ Result:
 5 Paperback                    4.06
 6 Unknown Binding              3.99
 ```
-//Explain
 
-- list 1
-- list 2
+Summary :
+```
+The average rating of each types of books as follows
+- Boxed Set - Hardcover is 4.49. 
+- ebook is 4.29. 
+- Hardcover is 4.06.
+- Kindle Edition is 4.01.
+- Paperback is 4.06.
+- Unknown Binding is 3.99.
+```
 ---
 
 
-
-### 5. หนังสือที่ไม่มี review เลยคือเรื่องใด
+### 5. Books with no reviews.  
+Code :
 ```
 books %>% select(Book_title, Reviews) %>% filter(Reviews == 0) %>% print(n = 20)
 ```
 
 Result:
-
 ```
 # A tibble: 22 × 2
-   Book_title                                Reviews
-   <chr>                                       <dbl>
- 1 Responsive Web Design Overview For Begin…       0
- 2 ZX Spectrum Games Code Club: Twenty fun …       0
- 3 Game Programming Golden Rules                   0
- 4 Beginners Guide On PHP Programming: Quic…       0
- 5 Python Programming Books Set: Python Pro…       0
- 6 Your First App: Node.js                         0
- 7 Python Programming For Beginners: Quick …       0
- 8 Building an FPS Game with Unity                 0
- 9 Advanced Game Programming: A Gamedev.Net…       0
-10 Basic Proof Theory                              0
-11 Cross-Platform Game Programming (Game De…       0
-12 Lambda-Calculus, Combinators and Functio…       0
-13 The Calculus of Computation: Decision Pr…       0
-14 Communication Networks: Fundamental Conc…       0
-15 Genetic Programming II: Automatic Discov…       0
-16 Game Programming Gems 2                         0
-17 Game Programming Gems 5                         0
-18 A First Course in Logic: An Introduction…       0
-19 Game Programming Gems 6                         0
-20 Game Programming Gems 4                         0
-# … with 2 more rows
+   Book_title                                                            Reviews
+   <chr>                                                                   <dbl>
+ 1 Responsive Web Design Overview For Beginners                                0
+ 2 ZX Spectrum Games Code Club: Twenty fun games to code and learn             0
+ 3 Game Programming Golden Rules                                               0
+ 4 Beginners Guide On PHP Programming: Quick And Easy Guide To Learn PH…       0
+ 5 Python Programming Books Set: Python Programming for Beginners & Com…       0
+ 6 Your First App: Node.js                                                     0
+ 7 Python Programming For Beginners: Quick And Easy Guide For Python Pr…       0
+ 8 Building an FPS Game with Unity                                             0
+ 9 Advanced Game Programming: A Gamedev.Net Collection                         0
+10 Basic Proof Theory                                                          0
+# … with 12 more rows
 ```
-//Explain
 
-- list 1
-- list 2
+Summary :
+```
+There are 22 books that has no reviews. 
+```
 ---
 
 
-
-### 6. หนังสือที่มีจำนวนหน้าอยู่ระหว่าง 550-600 และมีราคาไม่เกิน 70 มีเรื่องใดบ้าง
+### 6. Books that have pages between 550 and 600 and price less than 70. 
+Code :  
 ```
-books %>% select(Book_title, Number_Of_Pages, Price) %>% filter(Number_Of_Pages >= 550 & Number_Of_Pages <= 600 & Price <= 70)
+books %>% select(Book_title, Number_Of_Pages, Price) %>% 
+          filter(Number_Of_Pages >= 550 & Number_Of_Pages <= 600 & Price < 70)
 ```
 
 Result:
-
 ```
 # A tibble: 8 × 3
   Book_title                   Number_Of_Pages Price
@@ -165,9 +168,35 @@ Result:
 6 The Boost C++ Libraries                  570  50.5
 7 Dependency Injection in .NET             584  61.9
 8 Domain-Specific Languages                597  64.4
-> 
 ```
-//Explain
 
-- list 1
-- list 2
+Summary :
+```
+There are 8 books that have the number of pages between 550 and 600 and price less than equal 70.
+```
+---
+
+
+### 7. Books that have the content about programming and price less than 25.  
+Code :
+```
+books %>% filter(Book_title %>% str_detect("Programming") & Price < 25) 
+```
+
+Result :
+```
+# A tibble: 4 × 7
+  Rating Reviews Book_title                  Description                 Number_Of_Pages  Type  Price
+   <dbl>   <dbl> <chr>                       <chr>                                 <dbl>  <chr> <dbl>
+1   3.2        0 Game Programming Golden Ru… "'Game Programming Golden …             318  Pape…  19.2
+2   4.32      39 Expert C Programming: Deep… "Written for experienced C…             384  Pape…  21.1
+3   4.33       0 Beginners Guide On PHP Pro… "The Book - Beginners Guid…             410  Pape…  23.2
+4   4          0 Python Programming Books S… "Quick & Easy Guide to Pyt…             446  Pape…  23.9
+```
+
+Summary :
+```
+There are 4 books that have the content about programming and price less than 25.  
+```
+---
+### Next to : Visualization with GGplot2 [Click Here!]()
