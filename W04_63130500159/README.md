@@ -7,7 +7,7 @@ Choose Dataset :
 
 
 ### Outlines
-1. [Explore the dataset]()
-2. [Learning function from Tidyverse]()
-3. [Transform data with dplyr and finding insight the data]()
-4. [Visualization with GGplot2]()
+1. [Explore the dataset](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/explore_dataset.md)
+2. [Learning function from Tidyverse](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/learning_tidyverse.md)
+3. [Transform data with dplyr and finding insight the data](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/insight_data.md)
+4. [Visualization with GGplot2](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/data_viz.md)
