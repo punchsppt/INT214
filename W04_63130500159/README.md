@@ -2,7 +2,7 @@
 
 Created by Supapit Rattanataveesophon (ID : 63130500159)
 
-Choose Dataset :
+**Choose Dataset :**
 1. Top 270 Computer Science / Programing Books (Data from Thomas Konstantin, [Kaggle](https://www.kaggle.com/thomaskonstantin/top-270-rated-computer-science-programing-books)) >> [Using CSV](https://raw.githubusercontent.com/safesit23/INT214-Statistics/main/datasets/prog_book.csv)
 
 
@@ -11,3 +11,9 @@ Choose Dataset :
 2. [Learning function from Tidyverse](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/learning_tidyverse.md)
 3. [Transform data with dplyr and finding insight the data](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/insight_data.md)
 4. [Visualization with GGplot2](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/data_viz.md)
+
+### About Us
+งานนี้เป็นส่วนของวิชา INT214 Statistics for Information technology <br/> ภาคเรียนที่ 1 ปีการศึกษา 2564 คณะเทคโนโลยีสารสนเทศ มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี
+### Instructor
+- ATCHARA TRAN-U-RAIKUL
+- JATAWAT XIE (gitHub : [safesit23](https://github.com/safesit23))
