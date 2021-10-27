@@ -1,4 +1,4 @@
-# Part 3: Finding insight the data
+## Part 3: Finding insight the data
 
 ### 1. The number of books in each types.
 **Code :**
