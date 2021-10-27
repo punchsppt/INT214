@@ -22,9 +22,18 @@
 <img src="pie3.png" width=700>
 </p>
 
+**Explain :**
+Two of graphs show the number of books for each types as follows
+- Boxed Set - Hardcover has 1 book. 
+- ebook has 7 books. 
+- Hardcover has 95 books. 
+- Kindle Edition has 19 books. 
+- Paperback has 156 books. 
+- Unknown Blinding has 2 books.
+
 ---
 
-### 2. Graph show relation between rating and reviews which rating has more than equal 4.2.
+### 2. Graph shows relation between rating and reviews which rating has more than equal 4.2.
 **Code :**
 ```
 # scatter plot
@@ -38,6 +47,9 @@ Result:
 <p align="center">
 <img src="scatter2.png" width=700>
 </p>
+
+**Explain :**
+This graph shows relation between rating and reviews which rating has more than equal 4.2.
 
 ---  
 ### Let's see graphs and charts that create by BI tools : tablueau [click here !](https://public.tableau.com/views/chart_16352816996460/chart?:language=en-US&:display_count=n&:origin=viz_share_link)
