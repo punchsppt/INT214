@@ -1,45 +1,36 @@
 ## Part 2 : Learning function from Tidyverse
+### 1. What is the Tidyverse ?
 Tidyverse is a collection of R packages for data manipulation, exploration and visualization that share a common design philosophy.   
-### Data Wrangling and Transformation
+
+### 2. Core packages in the Tidyverse
+For example :
+**Data Wrangling and Transformation**
 - Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/reference/filter.html#details). : It's using for filter out certain rows that meet your criteria(s).
 - Function `str_detect()` from package [stringr](https://stringr.tidyverse.org/#usage). : It's using for detect the presence or absence of a pattern in a character string which would return TRUE or FALSE. 
 
-For example :
+**Sample code :**
 ```
-# Show book that has "Art" in the title of book.
+# Show books that has "Art" in the title of book.
    books %>% filter(Book_title %>% str_detect("Art"))
 ```
-Result :
+**Result :**
 ```
 # A tibble: 8 × 7
-  Rating Reviews Book_title      Description     Number_Of_Pages Type   Price
-   <dbl>   <dbl> <chr>           <chr>                     <dbl> <chr>  <dbl>
-1   3.87     593 The Art of the… "A new product…             240 Hardc…  15.9
-2   3.75     370 Our Final Inve… "In as little …             336 Hardc…  16.9
-3   4.25      41 The Sciences o… "Continuing hi…             248 Paper…  45.8
-4   4.37      44 The Art of Com… "The bible of …             672 Hardc…  93.5
-5   4.18     130 Artificial Int… "For one or tw…            1132 Hardc… 116. 
-6   4.26       5 Numerical Reci… "Co-authored b…            1235 Hardc… 176. 
-7   4.49      36 The Art of Com… "Knuth's class…             896 Boxed… 220. 
-8   4.77       4 The Art of Com… "\"The bible o…            3168 Hardc… 220.
+  Rating Reviews Book_title                   Description                      Number_Of_Pages Type     Price
+   <dbl>   <dbl> <chr>                        <chr>                                      <dbl> <chr>    <dbl>
+1   3.87     593 The Art of the Start: The T… "A new product, a new service, …             240 Hardcov…  15.9
+2   3.75     370 Our Final Invention: Artifi… "In as little as a decade, arti…             336 Hardcov…  16.9
+3   4.25      41 The Sciences of the Artific… "Continuing his exploration of …             248 Paperba…  45.8
+4   4.37      44 The Art of Computer Program… "The bible of all fundamental a…             672 Hardcov…  93.5
+5   4.18     130 Artificial Intelligence: A … "For one or two-semester, under…            1132 Hardcov… 116. 
+6   4.26       5 Numerical Recipes: The Art … "Co-authored by four leading sc…            1235 Hardcov… 176. 
+7   4.49      36 The Art of Computer Program… "Knuth's classic work has been …             896 Boxed S… 220. 
+8   4.77       4 The Art of Computer Program… "\"The bible of all fundamental…            3168 Hardcov… 220. 
 ```
+**Explain :**
+The result show books that have the content about art and I use
+- str_detect() and filter()  
+**books %>% filter(Book_title %>% str_detect("Art"))** : For show books information that have "Art" in the Book_title.
 
-- Function `filter()` from package [dplyr](https://dplyr.tidyverse.org/articles/dplyr.html#select-columns-with-select). : It's using for filter out certain rows that meet your criteria(s).
-```
-books %>% filter(Type %in% "Hardcover" & Rating > 4.4) # show data which type is Hardcover
-```
-Result :
-```
-# A tibble: 6 × 7
-  Rating Reviews Book_title   Description  Number_Of_Pages Type 
-   <dbl>   <dbl> <chr>        <chr>                  <dbl> <chr>
-1   4.54      52 The Element… "This book …             325 Hard…
-2   4.62      28 The Linux P… "The Linux …            1506 Hard…
-3   4.46     164 Structure a… "There are …             657 Hard…
-4   4.41      48 Algorithms   "This fourt…             976 Hard…
-5   4.42      38 Computer Sy… "For Comput…             978 Hard…
-6   4.77       4 The Art of … "\"The bibl…            3168 Hard…
-# … with 1 more variable: Price <dbl>
-```
 ---
-### Next to : Transform data with dplyr and finding insight the data [Click Here!](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/insight_data.md)
+### Next is part 3 : Finding insight the data [Click Here !](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/insight_data.md)
