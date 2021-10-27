@@ -1,13 +1,13 @@
-# Part 3: Transform data with dplyr and finding insight the data
+# Part 3: Finding insight the data
 
 ### 1. The number of books in each types.
-Code :
+**Code :**
 ```
 num_of_books <- books %>% group_by(Type) %>% count()
 num_of_books
 ```
 
-Result :
+**Result :**
 ```
 # A tibble: 6 × 2
 # Groups:   Type [6]
@@ -21,25 +21,25 @@ Result :
 6 Unknown Binding           2
 ```
 
-Summary :  
+**Summary :**
 ```
 In total, there are 271 books which have 6 types as follows 
-- Boxed Set - Hardcover, has 1 book. 
-- ebook, has 7 books. 
-- Hardcover, has 95 books.
-- Kindle Edition, has 10 books.
-- Paperback, has 156 books.
-- Unknown Binding, has 2 books.
+- Boxed Set - Hardcover has 1 book. 
+- ebook has 7 books. 
+- Hardcover has 95 books.
+- Kindle Edition has 10 books.
+- Paperback has 156 books.
+- Unknown Binding has 2 books.
 ```
 ---
 
 ### 2. Show the title of book, type and price of all books that in paperback type and price is less than 20.  
-Code :
+**Code :**
 ```
 books %>% select(Book_title, Type, Price) %>% filter(Type %in% "Paperback" & Price < 20)
 ```
 
-Result:
+**Result :**
 ```
 # A tibble: 10 × 3
    Book_title                          Type    Price
@@ -56,28 +56,28 @@ Result:
 10 The Architecture of Open Source Ap… Paperb…  19.2
 ```
 
-Summary :
+**Summary :**
 ```
 There are 10 books that in paperback type and price is less than 20.
 ```
 ---
 
 ### 3. Show the title of book, type, pages and price that has the most least pages.  
-Code :
+**Code :**
 ```
 books %>% select(Book_title, Type, Number_Of_Pages ,Price) %>% filter(Number_Of_Pages == min(Number_Of_Pages))
 ```
 
-Result:
+**Result :**
 
 ```
 # A tibble: 1 × 4
-  Book_title           Type    Number_Of_Pages Price
-  <chr>                <chr>             <dbl> <dbl>
-1 Responsive Web Desi… Kindle…              50  11.3
+  Book_title                                   Type           Number_Of_Pages Price
+  <chr>                                        <chr>                    <dbl> <dbl>
+1 Responsive Web Design Overview For Beginners Kindle Edition              50  11.3
 ```
 
-Summary :
+**Summary :**
 ```
 A book with the most least pages is Responsive Web Design Overview For Beginners in Kindle Edition type.   
 It has only 50 pages and the price is 11.3. 
@@ -86,12 +86,12 @@ It has only 50 pages and the price is 11.3.
 
 
 ### 4. The average rating of each types of books.  
-Code :
+**Code :**
 ```
 books %>% group_by(Type) %>% summarise(Rating_mean = mean(Rating))
 ```
 
-Result:
+**Result :**
 ```
 # A tibble: 6 × 2
   Type                  Rating_mean
@@ -104,7 +104,7 @@ Result:
 6 Unknown Binding              3.99
 ```
 
-Summary :
+**Summary :**
 ```
 The average rating of each types of books as follows
 - Boxed Set - Hardcover is 4.49. 
@@ -118,12 +118,12 @@ The average rating of each types of books as follows
 
 
 ### 5. Books with no reviews.  
-Code :
+**Code :**
 ```
-books %>% select(Book_title, Reviews) %>% filter(Reviews == 0) %>% print(n = 20)
+books %>% select(Book_title, Reviews) %>% filter(Reviews == 0)
 ```
 
-Result:
+**Result :**
 ```
 # A tibble: 22 × 2
    Book_title                                                            Reviews
@@ -141,7 +141,7 @@ Result:
 # … with 12 more rows
 ```
 
-Summary :
+**Summary :**
 ```
 There are 22 books that has no reviews. 
 ```
@@ -149,13 +149,13 @@ There are 22 books that has no reviews.
 
 
 ### 6. Books that have pages between 550 and 600 and price less than 70. 
-Code :  
+**Code :**
 ```
 books %>% select(Book_title, Number_Of_Pages, Price) %>% 
           filter(Number_Of_Pages >= 550 & Number_Of_Pages <= 600 & Price < 70)
 ```
 
-Result:
+**Result :**
 ```
 # A tibble: 8 × 3
   Book_title                   Number_Of_Pages Price
@@ -170,7 +170,7 @@ Result:
 8 Domain-Specific Languages                597  64.4
 ```
 
-Summary :
+**Summary :**
 ```
 There are 8 books that have the number of pages between 550 and 600 and price less than equal 70.
 ```
@@ -178,12 +178,12 @@ There are 8 books that have the number of pages between 550 and 600 and price le
 
 
 ### 7. Books that have the content about programming and price less than 25.  
-Code :
+**Code :**
 ```
 books %>% filter(Book_title %>% str_detect("Programming") & Price < 25) 
 ```
 
-Result :
+**Result :**
 ```
 # A tibble: 4 × 7
   Rating Reviews Book_title                  Description                 Number_Of_Pages  Type  Price
@@ -194,9 +194,9 @@ Result :
 4   4          0 Python Programming Books S… "Quick & Easy Guide to Pyt…             446  Pape…  23.9
 ```
 
-Summary :
+**Summary :**
 ```
 There are 4 books that have the content about programming and price less than 25.  
 ```
 ---
-### Next to : Visualization with GGplot2 [Click Here!](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/data_viz.md)
+### Next is part 4 : Visualization with GGplot2 [Click Here !](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/data_viz.md)
