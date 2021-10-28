@@ -33,7 +33,7 @@ In total, there are 271 books which have 6 types as follows
 ```
 ---
 
-### 2. Show the title of book, type and price of all books that in paperback type and price is less than 20.  
+### 2. Show the title of book, type and price of all books that in paperback type and price is less than 20 USD.  
 **Code :**
 ```
 books %>% select(Book_title, Type, Price) %>% filter(Type %in% "Paperback" & Price < 20)
@@ -58,7 +58,7 @@ books %>% select(Book_title, Type, Price) %>% filter(Type %in% "Paperback" & Pri
 
 **Summary :**
 ```
-There are 10 books that in paperback type and price is less than 20.
+There are 10 books that in paperback type and price is less than 20 USD.
 ```
 ---
 
@@ -80,7 +80,7 @@ books %>% select(Book_title, Type, Number_Of_Pages ,Price) %>% filter(Number_Of_
 **Summary :**
 ```
 A book with the most least pages is Responsive Web Design Overview For Beginners in Kindle Edition type.   
-It has only 50 pages and the price is 11.3. 
+It has only 50 pages and the price is 11.3 USD. 
 ```
 ---
 
@@ -107,12 +107,12 @@ books %>% group_by(Type) %>% summarise(Rating_mean = mean(Rating))
 **Summary :**
 ```
 The average rating of each types of books as follows
-- Boxed Set - Hardcover is 4.49. 
-- ebook is 4.29. 
-- Hardcover is 4.06.
-- Kindle Edition is 4.01.
-- Paperback is 4.06.
-- Unknown Binding is 3.99.
+- Boxed Set - Hardcover is 4.49 points. 
+- ebook is 4.29 points. 
+- Hardcover is 4.06 points.
+- Kindle Edition is 4.01 points.
+- Paperback is 4.06 points.
+- Unknown Binding is 3.99 points.
 ```
 ---
 
@@ -148,7 +148,7 @@ There are 22 books that has no reviews.
 ---
 
 
-### 6. Books that have pages between 550 and 600 and price less than 70. 
+### 6. Books that have pages between 550 and 600 pages and price less than 70 USD. 
 **Code :**
 ```
 books %>% select(Book_title, Number_Of_Pages, Price) %>% 
@@ -172,12 +172,12 @@ books %>% select(Book_title, Number_Of_Pages, Price) %>%
 
 **Summary :**
 ```
-There are 8 books that have the number of pages between 550 and 600 and price less than equal 70.
+There are 8 books that have the number of pages between 550 and 600 pages and price less than equal 70 USD.
 ```
 ---
 
 
-### 7. Books that have the content about programming and price less than 25.  
+### 7. Books that have the content about programming and price less than 25 USD.  
 **Code :**
 ```
 books %>% filter(Book_title %>% str_detect("Programming") & Price < 25) 
@@ -196,7 +196,7 @@ books %>% filter(Book_title %>% str_detect("Programming") & Price < 25)
 
 **Summary :**
 ```
-There are 4 books that have the content about programming and price less than 25.  
+There are 4 books that have the content about programming and price less than 25 USD.  
 ```
 ---
 ### Next is part 4 : Visualization with GGplot2 [Click Here !](https://github.com/punchsppt/INT214/blob/main/W04_63130500159/data_viz.md)
