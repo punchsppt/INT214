@@ -33,7 +33,7 @@ Two of graphs show the number of books for each types as follows
 
 ---
 
-### 2. Graph shows relation between rating and reviews which rating has more than equal 4.2.
+### 2. Graph shows relation between rating and reviews which rating has more than 4.2 points.
 **Code :**
 ```
 # scatter plot
@@ -41,15 +41,15 @@ Two of graphs show the number of books for each types as follows
              ggplot(aes(x=Rating, y=Reviews)) + geom_point(aes(color=Type)) +
              ggtitle("Graph show relation between rating and reviews")
   scatter
-
 ```
-Result:
+
+**Result :**  
 <p align="center">
 <img src="scatter2.png" width=700>
 </p>
 
 **Explain :**
-This graph shows relation between rating and reviews which rating has more than equal 4.2.
+This graph shows relation between rating and reviews which rating has more than 4.2 points.
 
 ---  
 ### Let's see graphs and charts that create by BI tools : tablueau [click here !](https://public.tableau.com/views/chart_16352816996460/chart?:language=en-US&:display_count=n&:origin=viz_share_link)
